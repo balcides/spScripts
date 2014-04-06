@@ -41,14 +41,11 @@ public class Menu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		print("score test: " + iScore);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		iScore++;
-		print("score test: " + iScore);
 	
 	}
 	
