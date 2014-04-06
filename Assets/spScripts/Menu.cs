@@ -17,24 +17,15 @@ using System.Collections;
 
 public class Menu : MonoBehaviour {
 	
-	private LevelSelect levelSelect;
-	private LevelSelect lss;
 	
 	void Awake(){
-		 levelSelect = GetComponent<LevelSelect>();
+
 	}
 
 	// Use this for initialization
 	void Start () {
 
-		LevelSelect.gameOver();		//this was using a public static class
-		levelSelect.doThis(); //this was using getComponent but not set as an istance
-		
-		//LevelSelect ls = new LevelSelect(); //this is discouraged
-		lss = this.gameObject.AddComponent("LevelSelect") as LevelSelect; //this works instead of "new"
-		
-		lss.doThis();	// uses the addComponent
-		//ls.doThis();	// uses the "new"
+
 	}
 	
 	// Update is called once per frame
@@ -48,12 +39,3 @@ public class Menu : MonoBehaviour {
 	
 }
 
-// end of script. Testing revision control
-
-/*
-public class Example : MonoBehaviour {
-    public SphereCollider sc;
-    void Example() {
-        gameObject.AddComponent("FoobarScript");
-        sc = gameObject.AddComponent("SphereCollider") as SphereCollider;
-*/
