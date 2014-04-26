@@ -36,6 +36,7 @@ public class Menu : MonoBehaviour {
 		
 		iScore = score.Scores.gameScore;
 		print(score.Scores.gameScore);
+                print(score.Scores.levelScore);
                 print(score.Scores.topScore);
 	}
 
