@@ -10,7 +10,9 @@ using System.Collections;
 
 public class Score : MonoBehaviour {
 	
-
+        public int topScore = 0;       //overall top score
+        public int localScore = 0;     //current level score until mission complete then reset
+        public int gameScore = 0;      //the overall score for the game after several levels
 	
 	// Use this for initialization
 	void Start () {
@@ -24,10 +26,6 @@ public class Score : MonoBehaviour {
 	
 	public class Scores
 	{
-		public int topScore = 0;	//overall top score
-		int localScore = 0;		//current level score until mission complete then reset
-		int gameScore = 0;	//the overall score for the game after several levels
-		
 		public void initialize()
 		{
 			print("Score System initialized");
