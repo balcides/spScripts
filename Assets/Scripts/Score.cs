@@ -22,11 +22,11 @@ public class Score : MonoBehaviour {
 	
 	}
 	
-	public class Systems
+	public class Scores
 	{
-		public int globalScore = 0;	//overall top score
-		int localScore = 0;		//top score within the game locally
-		int currentScore = 0;	//the overall score for the game during a session
+		public int topScore = 0;	//overall top score
+		int localScore = 0;		//current level score until mission complete then reset
+		int gameScore = 0;	//the overall score for the game after several levels
 		
 		public void initialize()
 		{
