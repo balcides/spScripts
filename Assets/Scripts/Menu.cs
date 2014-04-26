@@ -18,19 +18,19 @@ using System.Collections;
 
 public class Menu : MonoBehaviour {
 	
-	private LevelSelect ls; 				//loading level select class
+	private LevelSelect levelSelect; 				//loading level select class
 	private Score score; 					//loading level select class
 	int iScore;
 	
 	void Awake(){
 		
-		ls = GetComponent<LevelSelect>(); 	//initializing scripts (make sure it's attached)
+		levelSelect = GetComponent<LevelSelect>(); 	//initializing scripts (make sure it's attached)
 		score = GetComponent<Score>(); 		//initializing scripts (make sure it's attached)
 		
-		ls.gameOver();						//Here Im calling gameOver
-		ls.missionComplete();				//Here Im calling MissionComplete as part af a class test
-		ls.levels.rounds(); 				//level rounds initialized	
-		ls.levels.bonus();					//bonus rounds added
+		levelSelect.gameOver();						//Here Im calling gameOver
+		lelelSelect.missionComplete();				//Here Im calling MissionComplete as part af a class test
+		levelSelect.levels.rounds(); 				//level rounds initialized	
+		levelSelect.levels.bonus();					//bonus rounds added
 		
 		score.system.initialize();			//initializes score system
 		
