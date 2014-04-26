@@ -38,15 +38,8 @@ public class LevelSelect : MonoBehaviour {
 	// rounds and bonus loaded here
 	public class Levels
 	{
-		public void rounds()
-		{
-			print("rounds initialized");
-		}
-		
-		public void bonus()
-		{
-			print("bonus initialized");
-		}
+		public int rounds;
+                public int bonus;
 	}
 	
 	public Levels levels = new Levels();
