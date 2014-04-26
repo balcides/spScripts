@@ -20,7 +20,6 @@ public class Menu : MonoBehaviour {
 	
 	private LevelSelect levelSelect; 				//loading level select class
 	private Score score; 					//loading level select class
-	int iScore;
 	
 	void Awake(){
 		
@@ -34,7 +33,6 @@ public class Menu : MonoBehaviour {
 		
 		score.Scores.initialize();			//initializes score system
 		
-		iScore = score.Scores.gameScore;
 		print(score.Scores.gameScore);
                 print(score.Scores.levelScore);
                 print(score.Scores.topScore);
