@@ -32,10 +32,11 @@ public class Menu : MonoBehaviour {
 		levelSelect.levels.rounds(); 				//level rounds initialized	
 		levelSelect.levels.bonus();					//bonus rounds added
 		
-		score.system.initialize();			//initializes score system
+		score.Scores.initialize();			//initializes score system
 		
-		iScore = score.system.globalScore;
-		
+		iScore = score.Scores.gameScore;
+		print(score.Scores.gameScore);
+                print(score.Scores.topScore);
 	}
 
 	// Use this for initialization
