@@ -28,7 +28,7 @@ public class Menu : MonoBehaviour {
 		score = GetComponent<Score>(); 		//initializing scripts (make sure it's attached)
 		
 		levelSelect.gameOver();						//Here Im calling gameOver
-		lelelSelect.missionComplete();				//Here Im calling MissionComplete as part af a class test
+		levelSelect.missionComplete();				//Here Im calling MissionComplete as part af a class test
 		levelSelect.levels.rounds(); 				//level rounds initialized	
 		levelSelect.levels.bonus();					//bonus rounds added
 		
