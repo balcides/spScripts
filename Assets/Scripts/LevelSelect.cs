@@ -39,7 +39,7 @@ public class LevelSelect : MonoBehaviour {
 	public class Levels
 	{
 		public int rounds;
-                public int bonus;
+        public int bonus;
 	}
 	
 	public Levels levels = new Levels();
