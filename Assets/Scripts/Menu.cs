@@ -61,6 +61,8 @@ public class Menu : MonoBehaviour {
 	void startMenu(){
 	}
 	
+	
+	//checks to make sure everything works
 	void systemsCheck(){
 		
 		//check for gameObjects buttons

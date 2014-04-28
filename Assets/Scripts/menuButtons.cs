@@ -12,7 +12,13 @@ using System.Collections;
 /// </summary>
 
 public class menuButtons : MonoBehaviour {
-
+	
+	Camera cam;
+	
+	void Awake(){
+		cam = Camera.main;
+	}
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -29,16 +35,31 @@ public class menuButtons : MonoBehaviour {
 		//Case swtich, case: name
 		switch (transform.name)
 		{
-			case "Button-options":
-				Debug.Log("cube OPTIONS working");
+			case "Button-start":
+				//Debug.Log("cube START working");
+				//move camera to start menu section
+				cam.animation.Play("camPanMenuStart");
 				break;
 			
 			case "Button-scores":
 				Debug.Log("cube SCORES working");
 				break;
 			
-			case "Button-start":
-				Debug.Log("cube START working");
+			case "Button-options":
+				Debug.Log("cube OPTIONS working");
+				break;
+			
+			case "Button-beginner":
+				Debug.Log("cube BEGINNER working");
+				break;
+			
+			case "Button-veteran":
+				Debug.Log("cube VETERAN working");
+				break;
+			
+			case "Button-mainmenu":
+				Debug.Log("cube MAINMENU working");
+			    cam.animation.Play("camPanMenuStartReturn");
 				break;
 			
 			default:
