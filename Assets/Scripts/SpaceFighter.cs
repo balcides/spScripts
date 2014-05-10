@@ -12,6 +12,8 @@ using System.Collections;
 /// </summary>
 
 [RequireComponent (typeof (Menu))]					//require Menu
+[RequireComponent (typeof (Inputs))]					//require Input
+[RequireComponent (typeof (Screensize))]					//require Screensize
 
 public class SpaceFighter : MonoBehaviour {
 	
