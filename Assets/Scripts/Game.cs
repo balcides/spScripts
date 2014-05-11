@@ -6,14 +6,48 @@ using System.Collections;
 /// Game.cs
 /// 
 /// This is designed to run the game (runtime scripts)
+/// this is the base script for running the game and elements. 
+/// The spawner should be attached and required to make this work
 /// 
 /// Author: Gabe Betancourt
 /// 
 /// </summary>
 
-
+[RequireComponent (typeof (Transform))]			//require Transform
 
 public class Game : MonoBehaviour {
+	
+	private Spawner spawner;
+	private WeaponSystem weaponSystem;
+	private Assets assets;
+	
+	public Transform spawnerGO;
+	public bool isGameMenu;
+	
+	//requires components if the game is not a menu
+	private void initilizeGame(){
+		if(isGameMenu){
+		}
+		else{
+			spawner = GetComponent<Spawner>();
+			weaponSystem = GetComponent<WeaponSystem>();
+			assets = GetComponent<Assets>();
+			
+			//require a gameobject called "spawner"
+			GameObject findSpawnerGO = GameObject.Find("Spawner");
+			
+			//checks if this is with the game object
+			if(findSpawnerGO == null){ 
+				//Debug.LogError("Make sure Spawner.cs is attached to an empty gameObject named 'Spawner', or make one and assign");
+				Transform spawnerT = Instantiate(spawnerGO) as Transform; spawnerGO = spawnerT;}
+			else{  }
+		}
+	}
+	
+	void Awake(){
+			
+			initilizeGame(); 
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -25,79 +59,9 @@ public class Game : MonoBehaviour {
 	
 	}
 	
-	//base scripts - Any one of these can be expanded to it's own scripting page if it gets too large to keep here
-	public class Spawner   //spawn units
-	{
-		public void initialize()
-		{
-			print("Spawner Initialized");
-		}
-		
-		//ENEMY CLASS
-		public class Enemy
-		{
-			public int health;
-			
-			public void initializeEnemy(){
-				print("enemy subclass initialized");
-			}
-			
-			
-			public class AI
-			{
-				public void initialize(){
-					
-						print("AI initialized");
-				}
-				
-				
-				public class Drone
-				{
-					
-					public void initialize(){
-						print("Drone Initialized");
-					}
-					
-				}
-				public Drone drone = new Drone(); //creates class on startup
-				
-				public class Boss
-				{
-					
-					public void initialize(){
-						print("Boss totally Initialized");
-					}
-					
-				}
-				public Boss boss = new Boss(); //creates class on startup
-				
-			}
-			public AI ai = new AI(); //creates class on startup
-		}
-		public Enemy enemy = new Enemy(); //creates class on startup
-		
-		//SHIP CLASS
-		class Ship
-		{
-			
-		}
-		
-		//POWERUPS CLASS
-		class Powerups
-		{
-			
-		}
-	}
-	public Spawner spawner = new Spawner(); //creates class on startup
+
 	
-	public class WeaponSystem	//weapon system for the game
-	{
-	}
-	
-	public class Assets		//loads, looks for, and handles assets for the game
-	{
-		
-	}
+
 }
 
 

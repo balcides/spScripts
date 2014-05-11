@@ -12,22 +12,33 @@ using System.Collections;
 /// </summary>
 
 [RequireComponent (typeof (Menu))]					//require Menu
-[RequireComponent (typeof (Inputs))]					//require Input
-[RequireComponent (typeof (Screensize))]					//require Screensize
 [RequireComponent (typeof (Game))]					//require Game
+[RequireComponent (typeof (Inputs))]				//require Input
+[RequireComponent (typeof (Screensize))]			//require Screensize
+[RequireComponent (typeof (Optimization))]			//require Optimization
+
 
 public class SpaceFighter : MonoBehaviour {
 	
 	private	GameObject GlobalGO = null;
+	
+	private Menu menu;
 	private Game game;
+	private Inputs input;
+	private Screensize screensize;
+	private Optimization optimizations;
 	
 	// Use this to initialize any variables or game state before the game starts. 
 	void Awake(){
 		
 		//check attached gameObjects
-		GlobalGO = GameObject.Find("Global");						//check that this script is attached to a game object named "Global"
+		GlobalGO = GameObject.Find("MasterGameController");						//check that this script is attached to a game object named "Global"
 		
-		game = GetComponent<Game>(); 	//initialize game
+		menu = GetComponent<Menu>();					//initialize menu
+		game = GetComponent<Game>(); 					//initialize game
+		input = GetComponent<Inputs>();					//initialize input
+		screensize = GetComponent<Screensize>();		//initialize screen
+		optimizations = GetComponent<Optimization>();	//initialize optimization
 		
 	}
 	
@@ -35,16 +46,9 @@ public class SpaceFighter : MonoBehaviour {
 	void Start () {
 			
 			//checks if this is with the game object
-			if(GlobalGO == null){
-			Debug.LogError("Make sure Menu.cs is attached to an empty gameObject named 'GlobalGO', or make one and assign");
-			}else{}
+			if(GlobalGO == null){ Debug.LogError("Make sure Menu.cs is attached to an empty gameObject named 'MasterGameController', or make one and assign"); }else{}
 			
-			//initilalize AI
-			game.spawner.initialize();
-			game.spawner.enemy.initializeEnemy();
-			game.spawner.enemy.ai.initialize();
-			game.spawner.enemy.ai.drone.initialize();
-			game.spawner.enemy.ai.boss.initialize();
+		
 	}
 	
 	// Update is called once per frame
