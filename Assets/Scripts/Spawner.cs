@@ -44,7 +44,8 @@ public class Spawner : MonoBehaviour {
 	//supposed to spew enemies from the array
 	public void enemy(){
 		print("Enemy spawn initialized");
-		Transform enemy0 = Instantiate(enemiesGO[0]) as Transform;
+		Vector3 enemypos = new Vector3(transform.position.x, transform.position.y - 5, transform.position.z);
+		Transform enemy0 = Instantiate(enemiesGO[0], enemypos, transform.rotation) as Transform;
 	}
 	
 	//supposed to spew ship player from the array
