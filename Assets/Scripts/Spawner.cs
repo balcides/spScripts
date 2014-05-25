@@ -44,19 +44,19 @@ public class Spawner : MonoBehaviour {
 	//supposed to spew enemies from the array
 	public void enemy(){
 		print("Enemy spawn initialized");
-		//Transform enemy0 = Instantiate(enemiesGO[0]) as Transform;
+		Transform enemy0 = Instantiate(enemiesGO[0]) as Transform;
 	}
 	
 	//supposed to spew ship player from the array
 	public void ship(){
 		print("Player spawn initialized");
-		//Transform playerGO = Instantiate(playerShipGO) as Transform;
+		Transform playerGO = Instantiate(playerShipGO) as Transform;
 	}
 	
 	//supposed to spew the powerups from the array
 	public void powerup(){
 		print("Power Up spawn initialized");
-		//Transform powerup0 = Instantiate(powerupGO[0]) as Transform;
+		Transform powerup0 = Instantiate(powerupGO[0]) as Transform;
 	}
 	
 	//Diplays the Spawner
