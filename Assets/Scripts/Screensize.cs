@@ -32,7 +32,7 @@ public class Screensize : MonoBehaviour {
     }
 	
 	void Awake(){
-		rez = screenSize.osx;
+		//rez = screenSize.osx;
 	}
 	
 	// Use this for initialization
