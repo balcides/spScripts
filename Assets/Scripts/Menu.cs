@@ -31,8 +31,6 @@ public class Menu : MonoBehaviour {
 		levelSelect = GetComponent<LevelSelect>(); 								//initializing scripts (make sure it's attached)
 		scoree = GetComponent<Score>(); 										//initializing scripts (make sure it's attached)
 		
-		systemsCheck(); 														//check that all menu buttons work
-		
 	}
 
 	// Use this for initialization
@@ -62,8 +60,8 @@ public class Menu : MonoBehaviour {
 	}
 	
 	
-	//checks to make sure everything works
-	void systemsCheck(){
+	//checks to make sure everything works - (runs from Game)
+	public void systemsCheck(){
 		
 		//check for gameObjects buttons
 		optionsButton = GameObject.Find("Button-options");

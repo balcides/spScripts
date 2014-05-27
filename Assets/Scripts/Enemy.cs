@@ -10,6 +10,7 @@ using System.Collections;
 /// 
 /// </summary>
 
+[RequireComponent (typeof (WeaponSystem))]					//require weapon system
 
 public class Enemy : MonoBehaviour {
 	
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		aiType(aiSelection);	//initialize controls
+		
 	}
 	
 	// Update is called once per frame

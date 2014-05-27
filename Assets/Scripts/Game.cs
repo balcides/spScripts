@@ -14,11 +14,13 @@ using System.Collections;
 /// </summary>
 
 [RequireComponent (typeof (Transform))]			//require Transform
+[RequireComponent (typeof (Menu))]	
 
 public class Game : MonoBehaviour {
 	
 	private Spawner spawner;
 	private WeaponSystem weaponSystem;
+	private Menu menu;
 	private Assets assets;
 	
 	public Transform spawnerGO;
@@ -27,14 +29,17 @@ public class Game : MonoBehaviour {
 	//requires components if the game is not a menu
 	private void initilizeGame(){
 		if(isGameMenu){
+			menu = GetComponent<Menu>();
+			menu.systemsCheck();
 		}
 		else{
 			spawner = GetComponent<Spawner>();
 			weaponSystem = GetComponent<WeaponSystem>();
 			assets = GetComponent<Assets>();
 			
+			
 			//require a gameobject called "spawner"
-			GameObject findSpawnerGO = GameObject.Find("Spawner");
+			GameObject findSpawnerGO = GameObject.Find("SpawnerGO");
 			
 			//checks if this is with the game object
 			if(findSpawnerGO == null){ 
