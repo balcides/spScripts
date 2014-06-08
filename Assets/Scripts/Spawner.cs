@@ -53,13 +53,17 @@ public class Spawner : MonoBehaviour {
 	//supposed to spew ship player from the array
 	public void ship(){
 		print("Player spawn initialized");
-		Transform playerGO = Instantiate(playerShipGO) as Transform;
+		Vector3 playerpos = new Vector3(transform.position.x, transform.position.y - 5, transform.position.z);
+		GameObject player0 = Instantiate(playerShipGO, playerpos, transform.rotation) as GameObject;
+		player0.transform.parent = transform;
 	}
 	
 	//supposed to spew the powerups from the array
 	public void powerup(){
 		print("Power Up spawn initialized");
-		Transform powerup0 = Instantiate(powerupGO[0]) as Transform;
+		Vector3 powerupPos = new Vector3(transform.position.x, transform.position.y - 5, transform.position.z);
+		GameObject powerup0 = Instantiate(powerupGO[0], powerupPos, transform.rotation) as GameObject;
+		powerup0.transform.parent = transform;
 	}
 	
 	//Diplays the Spawner
