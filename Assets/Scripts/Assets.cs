@@ -8,7 +8,18 @@ using System.Collections;
 /// </summary>
 
 public class Assets : MonoBehaviour {
-
+	
+	public Transform[] models;
+	public AudioClip[] audioFiles;
+	public Texture[] textures;
+	
+		
+    void Awake (){
+		
+            //Loading the items into the array
+           audioFiles[0] = (AudioClip)Resources.Load("Resources/Sound/intro");
+		}
+	
 	// Use this for initialization
 	void Start () {
 	
